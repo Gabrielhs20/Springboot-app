@@ -24,6 +24,6 @@ public class CustomerJPADataAccessService implements CustomerDao{
     //Returns a specific user by specifying an id
     @Override
     public Optional<Customer> selectCustomerById(Integer id) {
-        return Optional.empty();
+        return customerRepository.findById(id);
     }
 }

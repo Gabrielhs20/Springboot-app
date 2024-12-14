@@ -39,6 +39,7 @@ public class Main {
             );
             List<Customer> customers = List.of(isa, gabriel);
             customerRepository.saveAll(customers);
+
         };
     }
 }
