@@ -24,7 +24,7 @@ public class CustomerListDataAccessService implements CustomerDao{
     }
 
     @Override
-    public void inserCustomer(Customer customer) {
+    public void insertCustomer(Customer customer) {
         customers.add(customer);
     }
 
@@ -44,4 +44,11 @@ public class CustomerListDataAccessService implements CustomerDao{
                 .findFirst()
                 .ifPresent(customers::remove);
     }
+
+    @Override
+    public void updateCustomer(Customer update) {
+        customers.add(update);
+    }
+
+
 }
