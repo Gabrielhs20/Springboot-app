@@ -2,7 +2,6 @@ package com.gabriel.customer;
 
 import org.springframework.stereotype.Repository;
 
-import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
 
@@ -17,7 +16,7 @@ public class CustomerListDataAccessService implements CustomerDao{
     }
 
     @Override
-    public Optional<Customer> selectCustomerById(Integer id) {
+    public Optional<Customer> selectCustomerById(Long id) {
         return customers.stream()
                 .filter(c -> c.getId().equals(id))
                 .findFirst();
@@ -34,12 +33,12 @@ public class CustomerListDataAccessService implements CustomerDao{
     }
 
     @Override
-    public boolean existsPersonWithId(Integer id) {
+    public boolean existsPersonWithId(Long id) {
         return customers.stream().anyMatch( c -> c.getId().equals(id));
     }
 
     @Override
-    public void deleteCustomerById(Integer customerId){
+    public void deleteCustomerById(Long customerId){
         customers.stream().filter( c -> c.getId().equals(customerId))
                 .findFirst()
                 .ifPresent(customers::remove);

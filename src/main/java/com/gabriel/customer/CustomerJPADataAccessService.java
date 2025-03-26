@@ -23,7 +23,7 @@ public class CustomerJPADataAccessService implements CustomerDao{
 
     //Returns a specific user by specifying an id
     @Override
-    public Optional<Customer> selectCustomerById(Integer id) {
+    public Optional<Customer> selectCustomerById(Long id) {
         return customerRepository.findById(id);
     }
 
@@ -38,12 +38,12 @@ public class CustomerJPADataAccessService implements CustomerDao{
     }
 
     @Override
-    public void deleteCustomerById(Integer customerId) {
+    public void deleteCustomerById(Long customerId) {
         customerRepository.deleteById(customerId);
     }
 
     @Override
-    public boolean existsPersonWithId(Integer id) {
+    public boolean existsPersonWithId(Long id) {
         return customerRepository.existsCustomerById(id);
     }
 
